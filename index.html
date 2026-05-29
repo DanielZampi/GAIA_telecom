@@ -228,7 +228,6 @@
             );
         };
 
-        // --- Actualizado para incluir Tooltips en el Hover ---
         const TreeNode = ({ label, desc, iconName, delay, isVisible, color = "cyan", techBadge, badgeColor, tooltip }) => {
             const c = colorMap[color];
             return (
@@ -358,6 +357,7 @@
             const [treeRef, treeVisible] = useScrollReveal(0.2);
             const [archRef, archVisible] = useScrollReveal(0.1);
             const [pipeRef, pipeVisible] = useScrollReveal(0.15);
+            const [appendixRef, appendixVisible] = useScrollReveal(0.3);
 
             return (
                 <div className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-purple-500/30">
@@ -385,8 +385,7 @@
                                 Conoce a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 drop-shadow-[0_0_15px_rgba(176,38,255,0.4)]">GAIA</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                                Asistente Conversacional de Telecomunicaciones con GenAI UX.
-                                <br className="hidden md:block" /> Elevando el servicio al cliente con empatía, RAG y LangGraph.
+                                Asistente Conversacional Centrado en el Usuario para Empresas de Telecomunicaciones
                             </p>
                         </div>
 
@@ -450,13 +449,35 @@
                         <div className="grid md:grid-cols-2 gap-16 items-center">
                             <div className={`transition-all duration-1000 delay-100 ${descVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center md:text-left">¿Qué es GAIA?</h2>
-                                <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+                                <p className="text-gray-400 text-lg mb-4 leading-relaxed">
                                     GAIA es la respuesta a este desafío. Es una <strong className="text-purple-400">plataforma conversacional inteligente</strong> desarrollada para transformar el servicio al cliente de operadores en Colombia (Claro, Movistar, Tigo).
                                 </p>
-                                <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                                    Integra Recuperación Aumentada de Generación (RAG) y grafos conversacionales bajo principios de <strong>Human-Centered AI (HCAI)</strong>, ofreciendo una experiencia empática que busca mejorar métricas críticas como el NPS y el SUS, reduciendo directamente la fricción.
+                                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                                    Combina respuestas precisas basadas en documentación oficial, interacciones empáticas que se adaptan al estado emocional del usuario, y la capacidad de entender texto, voz e imágenes, todo bajo principios de Inteligencia Artificial Centrada en el Humano.
                                 </p>
-                                <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+                                
+                                {/* Contenedor Gráfico de Objetivos */}
+                                <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 mb-8">
+                                    <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                                        <Icon name="Target" size={16} className="text-cyan-400" /> El objetivo es concreto:
+                                    </h3>
+                                    <div className="grid grid-cols-3 gap-3">
+                                        <div className="bg-[#050505] p-3 rounded-xl border border-gray-800 text-center flex flex-col items-center justify-center shadow-inner">
+                                            <div className="text-xl md:text-2xl font-black text-purple-400 mb-1">+30-40<span className="text-[10px] md:text-sm font-normal text-gray-500"> pts</span></div>
+                                            <div className="text-[10px] sm:text-xs text-gray-400 font-medium">Elevar NPS</div>
+                                        </div>
+                                        <div className="bg-[#050505] p-3 rounded-xl border border-gray-800 text-center flex flex-col items-center justify-center shadow-inner">
+                                            <div className="text-xl md:text-2xl font-black text-blue-400 mb-1">70-75<span className="text-[10px] md:text-sm font-normal text-gray-500">%</span></div>
+                                            <div className="text-[10px] sm:text-xs text-gray-400 font-medium">TRPC</div>
+                                        </div>
+                                        <div className="bg-[#050505] p-3 rounded-xl border border-gray-800 text-center flex flex-col items-center justify-center shadow-inner">
+                                            <div className="text-xl md:text-2xl font-black text-green-400 mb-1">≥ 4<span className="text-[10px] md:text-sm font-normal text-gray-500">/5</span></div>
+                                            <div className="text-[10px] sm:text-xs text-gray-400 font-medium">Empatía</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
                                     <span className="px-3 py-1 bg-gray-800 rounded-md text-cyan-400 text-sm font-mono border border-cyan-500/20">Claro</span>
                                     <span className="px-3 py-1 bg-gray-800 rounded-md text-blue-400 text-sm font-mono border border-blue-500/20">Movistar</span>
                                     <span className="px-3 py-1 bg-gray-800 rounded-md text-indigo-400 text-sm font-mono border border-indigo-500/20">Tigo</span>
@@ -503,7 +524,7 @@
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-sm mb-6">
                                 <Icon name="Brain" size={16} /> Fundamentos del Sistema
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Principios GenAI UX & HCAI</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo GAIA conversa con las personas</h2>
                             <p className="text-gray-400 max-w-2xl mx-auto">El diseño de los prompts que gobiernan a GAIA está estructurado para maximizar la satisfacción y resolución, priorizando siempre la experiencia humana.</p>
                         </div>
 
@@ -545,7 +566,7 @@
                     <section ref={convRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
                         <div className={`transition-all duration-1000 ${convVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Router de Intenciones</h2>
-                            <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">El corazón de GAIA es el <strong>classify_node</strong>. Detecta la intención y emoción del usuario para decidir la ruta óptima en tiempo real de forma dinámica.</p>
+                            <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">El corazón de GAIA es su <strong>Motor de Decisión</strong>. Detecta la intención y el estado emocional del usuario para elegir la ruta óptima en tiempo real.</p>
 
                             <div className="grid md:grid-cols-3 gap-8 relative">
                                 <NeonCard isVisible={convVisible} delay="100" className="border-t-4 border-t-pink-500 hover:border-pink-500/50">
@@ -641,192 +662,209 @@
                         </div>
                     </section>
 
-                    {/* --- ESTRUCTURA DEL PROYECTO --- */}
-                    <section ref={treeRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
-                        <div className={`transition-all duration-1000 ${treeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
-                            <div className="flex flex-col items-center mb-12">
-                                <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
-                                    <Icon name="Terminal" className="text-cyan-400" /> Estructura del Repositorio
+                    {/* --- APÉNDICE: PROFUNDIZACIÓN TÉCNICA --- */}
+                    <div className="relative z-10 w-full bg-gradient-to-b from-transparent via-[#050505] to-[#0a0a0e]">
+                        
+                        {/* Título Separador */}
+                        <section ref={appendixRef} className="py-20 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
+                            <div className={`text-center flex flex-col items-center transition-all duration-1000 ${appendixVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+                                <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 mb-6 tracking-tight">
+                                    Para quienes quieran profundizar:
                                 </h2>
-                                <p className="text-gray-400 mt-4 text-center max-w-2xl">Organización modular diseñada para la escalabilidad, separando la interfaz, la API, el pipeline de datos y la orquestación del grafo.</p>
+                                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-400 text-sm md:text-base mb-8">
+                                    <Icon name="Layers" size={18} /> Arquitectura y stack tecnológico
+                                </div>
+                                <div className="w-24 h-1 bg-purple-500/50 mx-auto rounded-full"></div>
                             </div>
+                        </section>
 
-                            <div className="max-w-4xl mx-auto rounded-xl overflow-hidden border border-gray-800 bg-[#0d0d12] shadow-2xl">
-                                {/* Terminal Header */}
-                                <div className="h-10 border-b border-gray-800 bg-[#15151e] flex items-center justify-between px-4">
-                                    <div className="flex gap-2">
-                                        <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                        <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                        <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                                    </div>
-                                    <div className="text-xs font-mono text-gray-500 flex items-center gap-2">
-                                        <Icon name="FolderOpen" size={14} /> dimarior/telecom-chatbot
-                                    </div>
-                                    <div></div> {/* Spacer */}
+                        {/* --- ESTRUCTURA DEL PROYECTO --- */}
+                        <section ref={treeRef} className="py-10 px-6 md:px-20 max-w-7xl mx-auto">
+                            <div className={`transition-all duration-1000 ${treeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
+                                <div className="flex flex-col items-center mb-12">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                                        <Icon name="Terminal" className="text-cyan-400" /> Estructura del Repositorio
+                                    </h3>
+                                    <p className="text-gray-400 mt-4 text-center max-w-2xl">Organización modular diseñada para la escalabilidad, separando la interfaz, la API, el pipeline de datos y la orquestación del grafo.</p>
                                 </div>
 
-                                {/* Terminal Body */}
-                                <div className="p-4 sm:p-6 overflow-x-auto text-sm sm:text-base leading-relaxed bg-[#0d0d12]">
-                                    <FileTreeLine text="telecom-chatbot/" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- app/" />
-                                    <FileTreeLine text="|   +-- assets/                  Logos, imagenes, favicon, banner" />
-                                    <FileTreeLine text="|   +-- streamlit_app.py         Interfaz GAIA con selector de operadores" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- api/" />
-                                    <FileTreeLine text="|   +-- main.py                  FastAPI con endpoints /ask y /ask/graph" />
-                                    <FileTreeLine text="|   +-- __init__.py" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- src/" />
-                                    <FileTreeLine text="|   +-- config.py                Configuracion centralizada desde .env" />
-                                    <FileTreeLine text="|   +-- scraper.py               Web scraper anti-deteccion con seed URLs" />
-                                    <FileTreeLine text="|   +-- ingest.py                Chunking, embeddings y construccion de ChromaDB" />
-                                    <FileTreeLine text="|   +-- rag_chain.py             Pipeline RAG simple con MLflow tracing" />
-                                    <FileTreeLine text="|   +-- memory.py                Memoria persistente en SQLite" />
-                                    <FileTreeLine text="|   +-- evaluate.py              Evaluacion del sistema RAG con metricas" />
-                                    <FileTreeLine text="|   +-- product_catalog.json     Datos estructurados de operadores" />
-                                    <FileTreeLine text="|   +-- __init__.py" />
-                                    <FileTreeLine text="|   |" />
-                                    <FileTreeLine text="|   +-- graph/" />
-                                    <FileTreeLine text="|       +-- state.py             Definicion del estado LangGraph (ChatState)" />
-                                    <FileTreeLine text="|       +-- nodes.py             Nodos del grafo: classify, direct, product, retrieve, generate" />
-                                    <FileTreeLine text="|       +-- build.py             Compilacion del grafo con checkpointer SQLite" />
-                                    <FileTreeLine text="|       +-- __init__.py" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- data/" />
-                                    <FileTreeLine text="|   +-- raw/                     Datos crudos (no versionados)" />
-                                    <FileTreeLine text="|   +-- processed/               Archivos .txt generados por el scraper" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- vectorstore/                 ChromaDB persistido (generado, no versionado)" />
-                                    <FileTreeLine text="+-- reports/" />
-                                    <FileTreeLine text="|   +-- evaluation/              Resultados JSON de evaluacion RAG" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- docker/" />
-                                    <FileTreeLine text="|   +-- prometheus.yml           Configuracion de Prometheus" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- tests/" />
-                                    <FileTreeLine text="|   +-- test_scraper.py          Tests unitarios del scraper" />
-                                    <FileTreeLine text="|   +-- test_api.py              Tests basicos de la API" />
-                                    <FileTreeLine text="|" />
-                                    <FileTreeLine text="+-- main.py                      Orquestador del pipeline completo" />
-                                    <FileTreeLine text="+-- requirements.txt             Dependencias del proyecto" />
-                                    <FileTreeLine text="+-- docker-compose.yml           Prometheus + Grafana" />
-                                    <FileTreeLine text="+-- Makefile                     Comandos de gestion del proyecto" />
-                                    <FileTreeLine text="+-- .env.example                 Plantilla de variables de entorno" />
-                                    <FileTreeLine text="+-- .gitignore" />
-                                    <FileTreeLine text="+-- README.md" />
+                                <div className="max-w-4xl mx-auto rounded-xl overflow-hidden border border-gray-800 bg-[#0d0d12] shadow-2xl">
+                                    {/* Terminal Header */}
+                                    <div className="h-10 border-b border-gray-800 bg-[#15151e] flex items-center justify-between px-4">
+                                        <div className="flex gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                            <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                        </div>
+                                        <div className="text-xs font-mono text-gray-500 flex items-center gap-2">
+                                            <Icon name="FolderOpen" size={14} /> dimarior/telecom-chatbot
+                                        </div>
+                                        <div></div> {/* Spacer */}
+                                    </div>
+
+                                    {/* Terminal Body */}
+                                    <div className="p-4 sm:p-6 overflow-x-auto text-sm sm:text-base leading-relaxed bg-[#0d0d12]">
+                                        <FileTreeLine text="telecom-chatbot/" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- app/" />
+                                        <FileTreeLine text="|   +-- assets/                  Logos, imagenes, favicon, banner" />
+                                        <FileTreeLine text="|   +-- streamlit_app.py         Interfaz GAIA con selector de operadores" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- api/" />
+                                        <FileTreeLine text="|   +-- main.py                  FastAPI con endpoints /ask y /ask/graph" />
+                                        <FileTreeLine text="|   +-- __init__.py" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- src/" />
+                                        <FileTreeLine text="|   +-- config.py                Configuracion centralizada desde .env" />
+                                        <FileTreeLine text="|   +-- scraper.py               Web scraper anti-deteccion con seed URLs" />
+                                        <FileTreeLine text="|   +-- ingest.py                Chunking, embeddings y construccion de ChromaDB" />
+                                        <FileTreeLine text="|   +-- rag_chain.py             Pipeline RAG simple con MLflow tracing" />
+                                        <FileTreeLine text="|   +-- memory.py                Memoria persistente en SQLite" />
+                                        <FileTreeLine text="|   +-- evaluate.py              Evaluacion del sistema RAG con metricas" />
+                                        <FileTreeLine text="|   +-- product_catalog.json     Datos estructurados de operadores" />
+                                        <FileTreeLine text="|   +-- __init__.py" />
+                                        <FileTreeLine text="|   |" />
+                                        <FileTreeLine text="|   +-- graph/" />
+                                        <FileTreeLine text="|       +-- state.py             Definicion del estado LangGraph (ChatState)" />
+                                        <FileTreeLine text="|       +-- nodes.py             Nodos del grafo: classify, direct, product, retrieve, generate" />
+                                        <FileTreeLine text="|       +-- build.py             Compilacion del grafo con checkpointer SQLite" />
+                                        <FileTreeLine text="|       +-- __init__.py" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- data/" />
+                                        <FileTreeLine text="|   +-- raw/                     Datos crudos (no versionados)" />
+                                        <FileTreeLine text="|   +-- processed/               Archivos .txt generados por el scraper" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- vectorstore/                 ChromaDB persistido (generado, no versionado)" />
+                                        <FileTreeLine text="+-- reports/" />
+                                        <FileTreeLine text="|   +-- evaluation/              Resultados JSON de evaluacion RAG" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- docker/" />
+                                        <FileTreeLine text="|   +-- prometheus.yml           Configuracion de Prometheus" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- tests/" />
+                                        <FileTreeLine text="|   +-- test_scraper.py          Tests unitarios del scraper" />
+                                        <FileTreeLine text="|   +-- test_api.py              Tests basicos de la API" />
+                                        <FileTreeLine text="|" />
+                                        <FileTreeLine text="+-- main.py                      Orquestador del pipeline completo" />
+                                        <FileTreeLine text="+-- requirements.txt             Dependencias del proyecto" />
+                                        <FileTreeLine text="+-- docker-compose.yml           Prometheus + Grafana" />
+                                        <FileTreeLine text="+-- Makefile                     Comandos de gestion del proyecto" />
+                                        <FileTreeLine text="+-- .env.example                 Plantilla de variables de entorno" />
+                                        <FileTreeLine text="+-- .gitignore" />
+                                        <FileTreeLine text="+-- README.md" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    {/* --- ARQUITECTURA DEL SISTEMA --- */}
-                    <section ref={archRef} className="relative z-10 py-24 px-4 sm:px-6 md:px-20 max-w-7xl mx-auto bg-gradient-to-b from-transparent via-gray-900/20 to-transparent border-t border-gray-800/50">
-                        <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${archVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Arquitectura del Sistema</h2>
-                            <p className="text-gray-400">Desglose técnico de las tres capas principales.</p>
-                        </div>
+                        {/* --- ARQUITECTURA DEL SISTEMA --- */}
+                        <section ref={archRef} className="py-24 px-4 sm:px-6 md:px-20 max-w-7xl mx-auto">
+                            <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${archVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Arquitectura del Sistema</h3>
+                                <p className="text-gray-400">Desglose técnico de las tres capas principales.</p>
+                            </div>
 
-                        {/* --- FLUJO CONVERSACIONAL --- */}
-                        <div className="mb-24 md:mb-40 relative">
-                            <h3 className="text-xl md:text-2xl font-semibold mb-10 md:mb-16 text-center text-blue-400 flex items-center justify-center gap-3">
-                                <Icon name="Network" /> Flujo Conversacional End-to-End
-                            </h3>
+                            {/* --- FLUJO CONVERSACIONAL --- */}
+                            <div className="mb-24 md:mb-40 relative">
+                                <h4 className="text-xl md:text-2xl font-semibold mb-10 md:mb-16 text-center text-blue-400 flex items-center justify-center gap-3">
+                                    <Icon name="Network" /> Flujo Conversacional End-to-End
+                                </h4>
 
-                            <div className="flex flex-col items-start w-full max-w-3xl mx-auto pl-2 sm:pl-10 md:pl-20">
-                                <TreeNode label="Usuario" iconName="User" delay="0" isVisible={archVisible} color="cyan" tooltip="Cliente que interactúa vía Web, WhatsApp u otro canal." />
+                                <div className="flex flex-col items-start w-full max-w-3xl mx-auto pl-2 sm:pl-10 md:pl-20">
+                                    <TreeNode label="Usuario" iconName="User" delay="0" isVisible={archVisible} color="cyan" tooltip="Cliente que interactúa vía Web, WhatsApp u otro canal." />
 
-                                <div style={{ transitionDelay: '100ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-cyan-500/50 to-blue-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
+                                    <div style={{ transitionDelay: '100ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-cyan-500/50 to-blue-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
 
-                                <TreeNode label="Streamlit" desc="(interfaz web)" iconName="Bot" delay="200" isVisible={archVisible} color="blue" techBadge="Streamlit" tooltip="Frontend construido en Python para presentar la interfaz de GAIA al usuario final." />
+                                    <TreeNode label="Streamlit" desc="(interfaz web)" iconName="Bot" delay="200" isVisible={archVisible} color="blue" techBadge="Streamlit" tooltip="Frontend construido en Python para presentar la interfaz de GAIA al usuario final." />
 
-                                <div style={{ transitionDelay: '300ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-blue-500/50 to-purple-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
+                                    <div style={{ transitionDelay: '300ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-blue-500/50 to-purple-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
 
-                                <TreeNode label="FastAPI" desc="(API REST)" iconName="Server" delay="400" isVisible={archVisible} color="purple" techBadge="FastAPI + Uvicorn" tooltip="Gateway asíncrono y robusto que recibe los requests del frontend y ejecuta la lógica." />
+                                    <TreeNode label="FastAPI" desc="(API REST)" iconName="Server" delay="400" isVisible={archVisible} color="purple" techBadge="FastAPI + Uvicorn" tooltip="Gateway asíncrono y robusto que recibe los requests del frontend y ejecuta la lógica." />
 
-                                <div style={{ transitionDelay: '500ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-purple-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
+                                    <div style={{ transitionDelay: '500ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-purple-500/50 transition-all duration-500 ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'} origin-top`}></div>
 
-                                <TreeNode label="LangGraph" desc="(grafo conversacional)" iconName="Network" delay="600" isVisible={archVisible} color="purple" techBadge="LangGraph + SQLite" tooltip="Orquestador principal que maneja los estados de la IA y persiste la memoria en SQLite." />
+                                    <TreeNode label="LangGraph" desc="(grafo conversacional)" iconName="Network" delay="600" isVisible={archVisible} color="purple" techBadge="LangGraph + SQLite" tooltip="Orquestador principal que maneja los estados de la IA y persiste la memoria en SQLite." />
 
-                                <div className="relative flex flex-col mt-0 ml-6 sm:ml-8">
-                                    <div
-                                        style={{ transitionDelay: '700ms' }}
-                                        className={`absolute left-0 top-0 bottom-4 w-0.5 border-l-2 border-dashed border-purple-500/50 transition-all duration-1000 origin-top ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
-                                    ></div>
-
-                                    <BranchItem label="classify_node" desc="(router de intenciones)" iconName="GitBranch" delay="800" isVisible={archVisible} color="purple" tooltip="LLM inicial que detecta la intención y el sentimiento para enrutar la petición a la vía más rápida." />
-                                    <BranchItem label="direct_node" desc="(respuestas sociales y empáticas)" iconName="MessageSquare" delay="900" isVisible={archVisible} color="purple" tooltip="Procesa saludos, agradecimientos o quejas urgentes sin consumir recursos RAG." />
-                                    <BranchItem label="product_node" desc="(consultas comerciales y planes)" iconName="Zap" delay="1000" isVisible={archVisible} color="blue" tooltip="Se alimenta del catálogo JSON (product_catalog.json) para ventas y tarifas." />
-                                    <BranchItem label="retrieve_node" desc="(búsqueda semántica)" iconName="Search" delay="1100" isVisible={archVisible} color="cyan" techBadge="ChromaDB" tooltip="Consulta la base de datos vectorial para inyectar contexto a las dudas técnicas del usuario." />
-                                    <BranchItem label="generate_node" desc="(generación de respuesta)" iconName="Brain" delay="1200" isVisible={archVisible} color="purple" techBadge="Mistral AI (mistral-small)" badgeColor="orange" tooltip="El LLM principal que sintetiza toda la información y responde con empatía (HCAI)." />
-
-                                    <div className="relative mt-4 ml-[2.5rem] sm:ml-[3rem] md:ml-[4.5rem]">
+                                    <div className="relative flex flex-col mt-0 ml-6 sm:ml-8">
                                         <div
-                                            style={{ transitionDelay: '1300ms' }}
-                                            className={`absolute left-4 sm:left-6 top-[-20px] sm:top-[-30px] w-0.5 h-6 sm:h-8 bg-green-500/50 transition-all duration-500 origin-top ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
+                                            style={{ transitionDelay: '700ms' }}
+                                            className={`absolute left-0 top-0 bottom-4 w-0.5 border-l-2 border-dashed border-purple-500/50 transition-all duration-1000 origin-top ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
                                         ></div>
 
-                                        <TreeNode label="MLflow Tracing" iconName="Activity" delay="1400" isVisible={archVisible} color="green" techBadge="MLflow" tooltip="Plataforma de observabilidad que monitoriza los tokens, latencia y ejecución del grafo." />
+                                        <BranchItem label="classify_node" desc="(router de intenciones)" iconName="GitBranch" delay="800" isVisible={archVisible} color="purple" tooltip="LLM inicial que detecta la intención y el sentimiento para enrutar la petición a la vía más rápida." />
+                                        <BranchItem label="direct_node" desc="(respuestas sociales y empáticas)" iconName="MessageSquare" delay="900" isVisible={archVisible} color="purple" tooltip="Procesa saludos, agradecimientos o quejas urgentes sin consumir recursos RAG." />
+                                        <BranchItem label="product_node" desc="(consultas comerciales y planes)" iconName="Zap" delay="1000" isVisible={archVisible} color="blue" tooltip="Se alimenta del catálogo JSON (product_catalog.json) para ventas y tarifas." />
+                                        <BranchItem label="retrieve_node" desc="(búsqueda semántica)" iconName="Search" delay="1100" isVisible={archVisible} color="cyan" techBadge="ChromaDB" tooltip="Consulta la base de datos vectorial para inyectar contexto a las dudas técnicas del usuario." />
+                                        <BranchItem label="generate_node" desc="(generación de respuesta)" iconName="Brain" delay="1200" isVisible={archVisible} color="purple" techBadge="Mistral AI (mistral-small)" badgeColor="orange" tooltip="El LLM principal que sintetiza toda la información y responde con empatía (HCAI)." />
+
+                                        <div className="relative mt-4 ml-[2.5rem] sm:ml-[3rem] md:ml-[4.5rem]">
+                                            <div
+                                                style={{ transitionDelay: '1300ms' }}
+                                                className={`absolute left-4 sm:left-6 top-[-20px] sm:top-[-30px] w-0.5 h-6 sm:h-8 bg-green-500/50 transition-all duration-500 origin-top ${archVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
+                                            ></div>
+
+                                            <TreeNode label="MLflow Tracing" iconName="Activity" delay="1400" isVisible={archVisible} color="green" techBadge="MLflow" tooltip="Plataforma de observabilidad que monitoriza los tokens, latencia y ejecución del grafo." />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* --- PIPELINE DE DATOS --- */}
-                        <div ref={pipeRef} className="mb-10 md:mb-20 relative">
-                            <div className={`transition-all duration-700 ${pipeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                                <h3 className="text-xl md:text-2xl font-semibold mb-10 md:mb-16 text-center text-cyan-400 flex items-center justify-center gap-3">
-                                    <Icon name="Database" /> Pipeline de Ingesta RAG
-                                </h3>
-                            </div>
-
-                            <div className="flex flex-col items-start w-full max-w-3xl mx-auto pl-2 sm:pl-10 md:pl-20">
-                                <TreeNode label="Web Scraping" iconName="Globe" delay="0" isVisible={pipeVisible} color="cyan" techBadge="httpx + Playwright" badgeColor="cyan" tooltip="Script automatizado que extrae información oficial de las páginas de los operadores." />
-
-                                <div className="relative flex flex-col mt-0 ml-6 sm:ml-8">
-                                    <div
-                                        style={{ transitionDelay: '100ms' }}
-                                        className={`absolute left-0 top-0 bottom-[-24px] w-0.5 border-l-2 border-dashed border-cyan-500/50 transition-all duration-1000 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
-                                    ></div>
-
-                                    <BranchItem label="claro.com.co" iconName="Link" delay="200" isVisible={pipeVisible} color="cyan" tooltip="URL Semilla: Términos, condiciones y ayuda técnica de Claro." />
-                                    <BranchItem label="movistar.com.co" iconName="Link" delay="300" isVisible={pipeVisible} color="blue" tooltip="URL Semilla: Documentación y centro de soporte Movistar." />
-                                    <BranchItem label="tigo.com.co / ayuda..." iconName="Link" delay="400" isVisible={pipeVisible} color="purple" tooltip="URL Semilla: Base de conocimiento y PQR de Tigo." />
+                            {/* --- PIPELINE DE DATOS --- */}
+                            <div ref={pipeRef} className="mb-10 md:mb-20 relative">
+                                <div className={`transition-all duration-700 ${pipeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                                    <h4 className="text-xl md:text-2xl font-semibold mb-10 md:mb-16 text-center text-cyan-400 flex items-center justify-center gap-3">
+                                        <Icon name="Database" /> Pipeline de Ingesta RAG
+                                    </h4>
                                 </div>
 
-                                <div className="h-6 sm:h-8"></div>
+                                <div className="flex flex-col items-start w-full max-w-3xl mx-auto pl-2 sm:pl-10 md:pl-20">
+                                    <TreeNode label="Web Scraping" iconName="Globe" delay="0" isVisible={pipeVisible} color="cyan" techBadge="httpx + Playwright" badgeColor="cyan" tooltip="Script automatizado que extrae información oficial de las páginas de los operadores." />
 
-                                <TreeNode label="Procesamiento de texto" desc="(src/scraper.py)" iconName="FileText" delay="500" isVisible={pipeVisible} color="blue" techBadge="BeautifulSoup4" badgeColor="blue" tooltip="Limpia el código HTML escrapeado, eliminando scripts, estilos y ruido visual para dejar solo texto útil." />
+                                    <div className="relative flex flex-col mt-0 ml-6 sm:ml-8">
+                                        <div
+                                            style={{ transitionDelay: '100ms' }}
+                                            className={`absolute left-0 top-0 bottom-[-24px] w-0.5 border-l-2 border-dashed border-cyan-500/50 transition-all duration-1000 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
+                                        ></div>
 
-                                <div style={{ transitionDelay: '600ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-blue-500/50 to-purple-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
+                                        <BranchItem label="claro.com.co" iconName="Link" delay="200" isVisible={pipeVisible} color="cyan" tooltip="URL Semilla: Términos, condiciones y ayuda técnica de Claro." />
+                                        <BranchItem label="movistar.com.co" iconName="Link" delay="300" isVisible={pipeVisible} color="blue" tooltip="URL Semilla: Documentación y centro de soporte Movistar." />
+                                        <BranchItem label="tigo.com.co / ayuda..." iconName="Link" delay="400" isVisible={pipeVisible} color="purple" tooltip="URL Semilla: Base de conocimiento y PQR de Tigo." />
+                                    </div>
 
-                                <TreeNode label="data/processed/*.txt" iconName="FolderOpen" delay="700" isVisible={pipeVisible} color="purple" tooltip="Directorio intermedio que guarda los documentos limpios y listos para ser fragmentados." />
+                                    <div className="h-6 sm:h-8"></div>
 
-                                <div style={{ transitionDelay: '800ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-purple-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
+                                    <TreeNode label="Procesamiento de texto" desc="(src/scraper.py)" iconName="FileText" delay="500" isVisible={pipeVisible} color="blue" techBadge="BeautifulSoup4" badgeColor="blue" tooltip="Limpia el código HTML escrapeado, eliminando scripts, estilos y ruido visual para dejar solo texto útil." />
 
-                                <TreeNode label="Chunking + Embeddings" desc="(src/ingest.py)" iconName="Layers" delay="900" isVisible={pipeVisible} color="purple" techBadge="Ollama (nomic-embed)" badgeColor="purple" tooltip="Divide los .txt en fragmentos (chunks) y los convierte en vectores numéricos capturando su significado semántico." />
+                                    <div style={{ transitionDelay: '600ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-blue-500/50 to-purple-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
 
-                                <div style={{ transitionDelay: '1000ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-purple-500/50 to-green-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
+                                    <TreeNode label="data/processed/*.txt" iconName="FolderOpen" delay="700" isVisible={pipeVisible} color="purple" tooltip="Directorio intermedio que guarda los documentos limpios y listos para ser fragmentados." />
 
-                                <TreeNode label="ChromaDB" desc="(vectorstore/)" iconName="Database" delay="1100" isVisible={pipeVisible} color="green" techBadge="ChromaDB" badgeColor="green" tooltip="Almacenamiento vectorial en disco local que permite búsquedas rapidísimas basadas en similitud del coseno." />
-                            </div>
-                        </div>
+                                    <div style={{ transitionDelay: '800ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-purple-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
 
-                        {/* Global Tech & Environment Bar */}
-                        <div className={`mt-16 md:mt-24 transition-all duration-1000 ${archVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <div className="max-w-2xl mx-auto flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 md:gap-4 bg-gray-900/40 border border-gray-800 rounded-2xl p-4 md:p-6 backdrop-blur-sm">
-                                <span className="text-gray-400 font-mono text-sm sm:mr-2 flex items-center gap-2 mb-2 sm:mb-0 w-full justify-center sm:w-auto"><Icon name="Code" size={16} /> Entorno Global:</span>
-                                <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="px-3 py-1 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded text-[10px] sm:text-xs font-mono">Python 3.11</span>
-                                    <span className="px-3 py-1 bg-gray-800 text-gray-300 border border-gray-700 rounded text-[10px] sm:text-xs font-mono">uv + pip</span>
-                                    <span className="px-3 py-1 bg-orange-500/10 text-orange-400 border border-orange-500/30 rounded text-[10px] sm:text-xs font-mono">Prometheus + Grafana</span>
+                                    <TreeNode label="Chunking + Embeddings" desc="(src/ingest.py)" iconName="Layers" delay="900" isVisible={pipeVisible} color="purple" techBadge="Ollama (nomic-embed)" badgeColor="purple" tooltip="Divide los .txt en fragmentos (chunks) y los convierte en vectores numéricos capturando su significado semántico." />
+
+                                    <div style={{ transitionDelay: '1000ms' }} className={`w-0.5 h-6 sm:h-8 ml-6 sm:ml-8 bg-gradient-to-b from-purple-500/50 to-green-500/50 transition-all duration-500 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}></div>
+
+                                    <TreeNode label="ChromaDB" desc="(vectorstore/)" iconName="Database" delay="1100" isVisible={pipeVisible} color="green" techBadge="ChromaDB" badgeColor="green" tooltip="Almacenamiento vectorial en disco local que permite búsquedas rapidísimas basadas en similitud del coseno." />
                                 </div>
                             </div>
-                        </div>
-                    </section>
+
+                            {/* Global Tech & Environment Bar */}
+                            <div className={`mt-16 md:mt-24 transition-all duration-1000 ${archVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                                <div className="max-w-2xl mx-auto flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 md:gap-4 bg-gray-900/40 border border-gray-800 rounded-2xl p-4 md:p-6 backdrop-blur-sm">
+                                    <span className="text-gray-400 font-mono text-sm sm:mr-2 flex items-center gap-2 mb-2 sm:mb-0 w-full justify-center sm:w-auto"><Icon name="Code" size={16} /> Entorno Global:</span>
+                                    <div className="flex flex-wrap justify-center gap-2">
+                                        <span className="px-3 py-1 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded text-[10px] sm:text-xs font-mono">Python 3.11</span>
+                                        <span className="px-3 py-1 bg-gray-800 text-gray-300 border border-gray-700 rounded text-[10px] sm:text-xs font-mono">uv + pip</span>
+                                        <span className="px-3 py-1 bg-orange-500/10 text-orange-400 border border-orange-500/30 rounded text-[10px] sm:text-xs font-mono">Prometheus + Grafana</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
 
                     {/* FOOTER */}
-                    <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800 mt-10 md:mt-20 relative z-10 px-4">
+                    <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800 relative z-10 px-4 bg-[#0a0a0e]">
                         <p>GAIA Telecom Chatbot © 2026. Basado en el repositorio GitHub oficial.</p>
                         <p className="mt-2 text-xs">Human-Centered AI • RAG • LangGraph</p>
                     </footer>
