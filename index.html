@@ -23,6 +23,7 @@
                         'chat-float-3': 'chatFloat 6s ease-in-out infinite 4s',
                         'chat-glow-blue': 'chatGlowBlue 4s ease-in-out infinite',
                         'chat-glow-purple': 'chatGlowPurple 4s ease-in-out infinite 2s',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         chatFloat: {
@@ -384,7 +385,7 @@
                             </div>
 
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm mb-6 shadow-[0_0_15px_rgba(0,150,255,0.2)]">
-                                <SparklesIcon /> Plataforma Inteligente HCAI
+                                <SparklesIcon /> Plataforma de IA Centrada en el Usuario
                             </div>
                             <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter">
                                 Conoce a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 drop-shadow-[0_0_15px_rgba(176,38,255,0.4)]">GAIA</span>
@@ -413,7 +414,7 @@
                             <div className="grid md:grid-cols-2 gap-16 items-center">
                                 <div>
                                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                                        El sector de telecomunicaciones en Colombia opera con más de <strong className="text-white">92,1 millones de líneas móviles activas</strong>, generando una demanda de atención al cliente masiva. Sin embargo, los canales automatizados están fallando.
+                                        El sector de telecomunicaciones en Colombia opera con más de <strong className="text-white">92,1 millones de líneas móviles activas</strong>, generando una demanda de atención al usuario masiva. Sin embargo, los canales automatizados están fallando.
                                     </p>
                                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                                         Los chatbots actuales operan bajo <span className="text-orange-400 font-medium">lógicas rígidas</span> basadas en palabras clave o modelos NLP genéricos. Son ineficaces para resolver consultas complejas, no se adaptan a la diversidad lingüística del país y carecen de interacciones empáticas.
@@ -437,12 +438,12 @@
                                     <NeonCard delay="300" className="border-yellow-500/30 hover:border-yellow-400/60 bg-yellow-950/20" isVisible={probVisible}>
                                         <Icon name="Bot" className="text-yellow-400 mb-4" size={28} />
                                         <div className="text-xl font-bold text-white mb-2">Chatbots Rígidos</div>
-                                        <p className="text-sm text-gray-400">Sin empatía ni adaptación lingüística.</p>
+                                        <p className="text-sm text-gray-400">Sin empatía ni adaptación lingüística al usuario.</p>
                                     </NeonCard>
                                     <NeonCard delay="400" className="border-pink-500/30 hover:border-pink-400/60 bg-pink-950/20" isVisible={probVisible}>
                                         <Icon name="PhoneMissed" className="text-pink-400 mb-4" size={28} />
                                         <div className="text-xl font-bold text-white mb-2">Alto Churn</div>
-                                        <p className="text-sm text-gray-400">Costos de adquisición por fugas de clientes.</p>
+                                        <p className="text-sm text-gray-400">Costos de adquisición por fugas de usuarios.</p>
                                     </NeonCard>
                                 </div>
                             </div>
@@ -455,10 +456,10 @@
                             <div className={`transition-all duration-1000 delay-100 ${descVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center md:text-left">¿Qué es GAIA?</h2>
                                 <p className="text-gray-400 text-lg mb-4 leading-relaxed">
-                                    GAIA es la respuesta a este desafío. Es una <strong className="text-purple-400">plataforma conversacional inteligente</strong> desarrollada para transformar el servicio al cliente de operadores en Colombia (Claro, Movistar, Tigo).
+                                    GAIA es la respuesta a este desafío. Es una <strong className="text-purple-400">plataforma conversacional inteligente</strong> desarrollada para transformar el servicio al cliente de los operadores de telecomunicaciones.
                                 </p>
                                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    Combina respuestas precisas basadas en documentación oficial, interacciones empáticas que se adaptan al estado emocional del usuario, y la capacidad de entender texto, voz e imágenes, todo bajo principios de Inteligencia Artificial Centrada en el Humano.
+                                    Combina respuestas precisas basadas en documentación oficial, interacciones empáticas que se adaptan al estado emocional, y la capacidad de entender texto, voz e imágenes, todo bajo principios de <strong className="text-gray-200">Inteligencia Artificial Centrada en el Usuario</strong>.
                                 </p>
                                 
                                 {/* Contenedor Gráfico de Objetivos */}
@@ -483,9 +484,9 @@
                                 </div>
 
                                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
-                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-cyan-400 text-sm font-mono border border-cyan-500/20">Claro</span>
-                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-blue-400 text-sm font-mono border border-blue-500/20">Movistar</span>
-                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-indigo-400 text-sm font-mono border border-indigo-500/20">Tigo</span>
+                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-cyan-400 text-sm font-mono border border-cyan-500/20">Operador A</span>
+                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-blue-400 text-sm font-mono border border-blue-500/20">Operador B</span>
+                                    <span className="px-3 py-1 bg-gray-800 rounded-md text-indigo-400 text-sm font-mono border border-indigo-500/20">Operador C</span>
                                 </div>
                             </div>
 
@@ -523,14 +524,14 @@
                         </div>
                     </section>
 
-                    {/* --- 3. PRINCIPIOS UX & HCAI --- */}
+                    {/* --- 3. PRINCIPIOS UX --- */}
                     <section ref={uxRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50 bg-gradient-to-b from-gray-900/30 to-transparent">
                         <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${uxVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-sm mb-6">
                                 <Icon name="Brain" size={16} /> Fundamentos del Sistema
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo GAIA conversa con las personas</h2>
-                            <p className="text-gray-400 max-w-2xl mx-auto">El diseño de los prompts que gobiernan a GAIA está estructurado para maximizar la satisfacción y resolución, priorizando siempre la experiencia humana.</p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo GAIA conversa con los usuarios</h2>
+                            <p className="text-gray-400 max-w-2xl mx-auto">El diseño de los prompts que gobiernan a GAIA está estructurado para maximizar la satisfacción y resolución, priorizando siempre la experiencia del usuario.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -551,7 +552,7 @@
                             />
                             <PrincipleCard
                                 isVisible={uxVisible} delay={400} color="orange" iconName="UserX"
-                                title="Fallback Humanizado"
+                                title="Fallback Amigable"
                                 desc="Cuando la información no está disponible (RAG vacío), se orienta al usuario con calidez sin romper el flujo conversacional."
                             />
                             <PrincipleCard
@@ -581,7 +582,7 @@
                                     <h3 className="text-xl font-bold text-white mb-2">Ruta Directa</h3>
                                     <p className="text-gray-400 text-sm mb-4">Saludos, quejas, empatía.</p>
                                     <ul className="text-xs text-gray-500 space-y-2 font-mono bg-gray-900/50 p-4 rounded-md">
-                                        <li>➔ Respuestas sociales</li>
+                                        <li>➔ Respuestas de servicio</li>
                                         <li>➔ Manejo de frustración</li>
                                         <li>➔ Temas fuera de dominio</li>
                                     </ul>
@@ -626,7 +627,7 @@
 
                                     <div className="relative z-10 flex flex-col gap-4 w-full">
                                         <div className="flex justify-between items-center bg-gray-800/80 p-3 sm:p-4 rounded-lg border border-gray-700 animate-chat-float-1">
-                                            <span className="text-gray-400 text-xs sm:text-sm">User: "Mi internet está lento"</span>
+                                            <span className="text-gray-400 text-xs sm:text-sm">Usuario: "Mi internet está lento"</span>
                                             <Icon name="Database" size={16} className="text-purple-400 flex-shrink-0" />
                                         </div>
                                         <div className="flex justify-between items-center bg-gray-800/80 p-3 sm:p-4 rounded-lg border border-gray-700 animate-chat-float-2 opacity-90">
@@ -634,7 +635,7 @@
                                             <Icon name="Database" size={16} className="text-purple-400 flex-shrink-0" />
                                         </div>
                                         <div className="flex justify-between items-center bg-purple-900/30 p-3 sm:p-4 rounded-lg border border-purple-500/50 animate-chat-float-3 animate-chat-glow-purple">
-                                            <span className="text-white text-xs sm:text-sm">User: "Sí, es ese"</span>
+                                            <span className="text-white text-xs sm:text-sm">Usuario: "Sí, es ese"</span>
                                             <Icon name="Shield" size={16} className="text-green-400 flex-shrink-0" />
                                         </div>
                                     </div>
@@ -646,7 +647,7 @@
                                     <Icon name="Cpu" className="text-purple-500" size={32} /> Memoria Conversacional
                                 </h2>
                                 <p className="text-gray-400 text-base md:text-lg mb-6 leading-relaxed">
-                                    Para lograr una experiencia empática y fluida, GAIA retiene el contexto histórico de la interacción mediante <strong>SQLite y LangGraph Checkpointers</strong>.
+                                    Para lograr una experiencia empática y fluida, GAIA retiene el contexto histórico de la interacción del usuario mediante <strong>SQLite y LangGraph Checkpointers</strong>.
                                 </p>
                                 <ul className="space-y-4 text-gray-300 text-sm md:text-base">
                                     <li className="flex items-start gap-3">
@@ -655,7 +656,7 @@
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_8px_#00ffff] flex-shrink-0"></div>
-                                        <span><strong>Anclaje Emocional:</strong> Permite recordar quejas previas para ajustar el tono y lograr mayor empatía.</span>
+                                        <span><strong>Anclaje Emocional:</strong> Permite recordar quejas previas para ajustar el tono y lograr mayor efectividad.</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1.5 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_#0096ff] flex-shrink-0"></div>
@@ -667,11 +668,11 @@
                         </div>
                     </section>
 
-                    {/* --- NUEVO: 6. ESCALABILIDAD Y OPORTUNIDAD DE MERCADO --- */}
+                    {/* --- 6. ESCALABILIDAD Y OPORTUNIDAD DE MERCADO --- */}
                     <section ref={marketRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
                         <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${marketVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-sm mb-6">
-                                <Icon name="BarChart" size={16} /> Oportunidad de Negocio
+                                <Icon name="BarChart" size={16} /> Oportunidad de Adopción
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Escalabilidad del Mercado</h2>
                             <p className="text-gray-400 max-w-2xl mx-auto text-lg">Alcanzar estas métricas en un mercado masivo representa una oportunidad financiera directa. La automatización rígida llegó a su límite; la transición hacia asistentes agénticos es supervivencia corporativa.</p>
@@ -691,7 +692,7 @@
                                     <Icon name="TrendingUp" size={32} className="text-green-400" />
                                 </div>
                                 <h3 className="text-4xl font-black text-white mb-2">$80B</h3>
-                                <p className="text-gray-400 text-sm">Optimización económica global proyectada por Gartner para 2026 gracias a la GenAI en servicio al cliente.</p>
+                                <p className="text-gray-400 text-sm">Optimización económica global proyectada por Gartner para 2026 gracias a la GenAI en el servicio al usuario.</p>
                             </NeonCard>
 
                             <NeonCard isVisible={marketVisible} delay={500} className="border-orange-500/30 hover:border-orange-400/60 flex flex-col items-center text-center">
@@ -704,14 +705,14 @@
                         </div>
                     </section>
 
-                    {/* --- NUEVO: 7. MODELO DE IMPLEMENTACIÓN Y NEGOCIO --- */}
+                    {/* --- NUEVO: 7. VIABILIDAD E IMPACTO --- */}
                     <section ref={bizRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
                         <div className={`transition-all duration-1000 ${bizVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
                             <div className="flex flex-col items-center mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
-                                    <Icon name="Briefcase" className="text-cyan-400" /> Modelo de Implementación
+                                    <Icon name="Briefcase" className="text-cyan-400" /> Viabilidad e Impacto
                                 </h2>
-                                <p className="text-gray-400 mt-4 text-center max-w-2xl text-lg">Distribución <strong className="text-gray-200">B2B SaaS en modalidad Marca Blanca</strong>, diseñado para integrarse ágilmente en la infraestructura de cada operador.</p>
+                                <p className="text-gray-400 mt-4 text-center max-w-2xl text-lg">La arquitectura de GAIA permite una implementación B2B en <strong className="text-gray-200">modalidad de marca blanca</strong>, con dos fases claras de adopción para cualquier operador.</p>
                             </div>
 
                             <div className="flex flex-col md:flex-row gap-6 relative max-w-5xl mx-auto">
@@ -722,14 +723,14 @@
                                 <div className="flex-1 relative z-10 bg-[#0a0a0e] border border-gray-800 rounded-2xl p-8 hover:border-cyan-500/50 transition-colors shadow-xl group">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-bl-full group-hover:bg-cyan-500/10 transition-colors"></div>
                                     <div className="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center mb-6">
-                                        <span className="text-xl font-black">1</span>
+                                        <Icon name="Database" size={24} className="group-hover:scale-110 transition-transform" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">Setup Fee</h3>
-                                    <p className="text-gray-400 mb-4">Costo inicial de implementación y despliegue del pipeline de datos.</p>
+                                    <h3 className="text-2xl font-bold text-white mb-3">Fase 1: Adaptación e Ingesta</h3>
+                                    <p className="text-gray-400 mb-4">Despliegue del pipeline de datos y web scraping automatizado para integrarnos con la documentación del operador.</p>
                                     <ul className="text-sm text-gray-500 space-y-2 font-mono">
-                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-cyan-500" /> Web scraping automatizado</li>
+                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-cyan-500" /> Extracción de manuales</li>
                                         <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-cyan-500" /> Procesamiento de doc oficial</li>
-                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-cyan-500" /> Construcción base vectorial</li>
+                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-cyan-500" /> Construcción base vectorial (RAG)</li>
                                     </ul>
                                 </div>
 
@@ -742,21 +743,21 @@
                                 <div className="flex-1 relative z-10 bg-[#0a0a0e] border border-gray-800 rounded-2xl p-8 hover:border-purple-500/50 transition-colors shadow-xl group">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full group-hover:bg-purple-500/10 transition-colors"></div>
                                     <div className="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6">
-                                        <span className="text-xl font-black">2</span>
+                                        <Icon name="Activity" size={24} className="group-hover:scale-110 transition-transform" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">Licenciamiento Recurrente</h3>
-                                    <p className="text-gray-400 mb-4">Modelo de suscripción escalable basado en el volumen de uso.</p>
+                                    <h3 className="text-2xl font-bold text-white mb-3">Fase 2: Operación y Escalabilidad</h3>
+                                    <p className="text-gray-400 mb-4">Despliegue de la API, orquestación de flujos y mantenimiento de la memoria local para atención masiva.</p>
                                     <ul className="text-sm text-gray-500 space-y-2 font-mono">
-                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Consumo de API</li>
-                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Volumen de tokens procesados</li>
-                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Mantenimiento de memoria local</li>
+                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Despliegue de LangGraph</li>
+                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Volumen de tokens optimizado</li>
+                                        <li className="flex items-center gap-2"><Icon name="CheckCircle2" size={14} className="text-purple-500" /> Monitoreo y métricas (MLflow)</li>
                                     </ul>
                                 </div>
                             </div>
 
                             {/* Alert de ventajas */}
                             <div className="max-w-3xl mx-auto mt-10 bg-gray-900/60 border border-gray-700 rounded-xl p-5 flex items-start sm:items-center gap-4">
-                                <div className="p-3 bg-green-500/10 rounded-full flex-shrink-0">
+                                <div className="p-3 bg-green-500/10 rounded-full flex-shrink-0 animate-pulse-slow">
                                     <Icon name="ShieldCheck" className="text-green-400" size={24} />
                                 </div>
                                 <div>
@@ -900,7 +901,7 @@
                                         <BranchItem label="direct_node" desc="(respuestas sociales y empáticas)" iconName="MessageSquare" delay="900" isVisible={archVisible} color="purple" tooltip="Procesa saludos, agradecimientos o quejas urgentes sin consumir recursos RAG." />
                                         <BranchItem label="product_node" desc="(consultas comerciales y planes)" iconName="Zap" delay="1000" isVisible={archVisible} color="blue" tooltip="Se alimenta del catálogo JSON (product_catalog.json) para ventas y tarifas." />
                                         <BranchItem label="retrieve_node" desc="(búsqueda semántica)" iconName="Search" delay="1100" isVisible={archVisible} color="cyan" techBadge="ChromaDB" tooltip="Consulta la base de datos vectorial para inyectar contexto a las dudas técnicas del usuario." />
-                                        <BranchItem label="generate_node" desc="(generación de respuesta)" iconName="Brain" delay="1200" isVisible={archVisible} color="purple" techBadge="Mistral AI (mistral-small)" badgeColor="orange" tooltip="El LLM principal que sintetiza toda la información y responde con empatía (HCAI)." />
+                                        <BranchItem label="generate_node" desc="(generación de respuesta)" iconName="Brain" delay="1200" isVisible={archVisible} color="purple" techBadge="Mistral AI (mistral-small)" badgeColor="orange" tooltip="El LLM principal que sintetiza toda la información y responde con empatía (IA centrada en el usuario)." />
 
                                         <div className="relative mt-4 ml-[2.5rem] sm:ml-[3rem] md:ml-[4.5rem]">
                                             <div
@@ -931,9 +932,9 @@
                                             className={`absolute left-0 top-0 bottom-[-24px] w-0.5 border-l-2 border-dashed border-cyan-500/50 transition-all duration-1000 origin-top ${pipeVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
                                         ></div>
 
-                                        <BranchItem label="claro.com.co" iconName="Link" delay="200" isVisible={pipeVisible} color="cyan" tooltip="URL Semilla: Términos, condiciones y ayuda técnica de Claro." />
-                                        <BranchItem label="movistar.com.co" iconName="Link" delay="300" isVisible={pipeVisible} color="blue" tooltip="URL Semilla: Documentación y centro de soporte Movistar." />
-                                        <BranchItem label="tigo.com.co / ayuda..." iconName="Link" delay="400" isVisible={pipeVisible} color="purple" tooltip="URL Semilla: Base de conocimiento y PQR de Tigo." />
+                                        <BranchItem label="operador-a.com" iconName="Link" delay="200" isVisible={pipeVisible} color="cyan" tooltip="URL Semilla: Términos, condiciones y ayuda técnica del Operador A." />
+                                        <BranchItem label="operador-b.com" iconName="Link" delay="300" isVisible={pipeVisible} color="blue" tooltip="URL Semilla: Documentación y centro de soporte del Operador B." />
+                                        <BranchItem label="operador-c.com / ayuda..." iconName="Link" delay="400" isVisible={pipeVisible} color="purple" tooltip="URL Semilla: Base de conocimiento y PQR del Operador C." />
                                     </div>
 
                                     <div className="h-6 sm:h-8"></div>
@@ -971,7 +972,7 @@
                     {/* FOOTER */}
                     <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800 relative z-10 px-4 bg-[#0a0a0e]">
                         <p>GAIA Telecom Chatbot © 2026. Basado en el repositorio GitHub oficial.</p>
-                        <p className="mt-2 text-xs">Human-Centered AI • RAG • LangGraph</p>
+                        <p className="mt-2 text-xs">IA Centrada en el Usuario • RAG • LangGraph</p>
                     </footer>
                 </div>
             );
