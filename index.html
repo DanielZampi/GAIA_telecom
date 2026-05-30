@@ -352,8 +352,8 @@
             const [heroRef, heroVisible] = useScrollReveal(0.3);
             const [probRef, probVisible] = useScrollReveal(0.2);
             const [descRef, descVisible] = useScrollReveal(0.2);
-            const [uxRef, uxVisible] = useScrollReveal(0.15);
             const [convRef, convVisible] = useScrollReveal(0.2);
+            const [uxRef, uxVisible] = useScrollReveal(0.15);
             const [memRef, memVisible] = useScrollReveal(0.2);
             
             // Refs para Negocio y Mercado
@@ -524,51 +524,7 @@
                         </div>
                     </section>
 
-                    {/* --- 3. PRINCIPIOS UX --- */}
-                    <section ref={uxRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50 bg-gradient-to-b from-gray-900/30 to-transparent">
-                        <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${uxVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-sm mb-6">
-                                <Icon name="Brain" size={16} /> Fundamentos del Sistema
-                            </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo GAIA conversa con los usuarios</h2>
-                            <p className="text-gray-400 max-w-2xl mx-auto">El diseño de los prompts que gobiernan a GAIA está estructurado para maximizar la satisfacción y resolución, priorizando siempre la experiencia del usuario.</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={100} color="pink" iconName="HeartHandshake"
-                                title="Empatía Conversacional"
-                                desc="Validación emocional inmediata ante la frustración o urgencia antes de saltar a la respuesta técnica."
-                            />
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={200} color="cyan" iconName="Type"
-                                title="UX Writing Claro"
-                                desc="Lenguaje simple, directo y sin tecnicismos, utilizando frases cortas y un tono natural conversacional."
-                            />
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={300} color="blue" iconName="SlidersHorizontal"
-                                title="Adaptación de Tono"
-                                desc="Ajuste dinámico: soporte empático, facturación tranquilizadora, ventas orientadoras y contención ante frustración."
-                            />
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={400} color="orange" iconName="UserX"
-                                title="Fallback Amigable"
-                                desc="Cuando la información no está disponible (RAG vacío), se orienta al usuario con calidez sin romper el flujo conversacional."
-                            />
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={500} color="purple" iconName="Infinity"
-                                title="Continuidad Contextual"
-                                desc="Se aprovecha el historial mediante LangGraph para mantener la coherencia y no tratar cada mensaje como una nueva consulta."
-                            />
-                            <PrincipleCard
-                                isVisible={uxVisible} delay={600} color="green" iconName="ShieldCheck"
-                                title="Grounding Estricto"
-                                desc="Las respuestas se basan exclusivamente en el contexto recuperado de ChromaDB. Prevención total de alucinaciones."
-                            />
-                        </div>
-                    </section>
-
-                    {/* --- 4. ARQUITECTURA CONVERSACIONAL (ROUTER) --- */}
+                    {/* --- 3. ARQUITECTURA CONVERSACIONAL (ROUTER) --- */}
                     <section ref={convRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
                         <div className={`transition-all duration-1000 ${convVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Router de Intenciones</h2>
@@ -614,6 +570,50 @@
                                     </ul>
                                 </NeonCard>
                             </div>
+                        </div>
+                    </section>
+
+                    {/* --- 4. PRINCIPIOS UX --- */}
+                    <section ref={uxRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50 bg-gradient-to-b from-gray-900/30 to-transparent">
+                        <div className={`text-center mb-16 md:mb-20 transition-all duration-700 ${uxVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-sm mb-6">
+                                <Icon name="Brain" size={16} /> Fundamentos del Sistema
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Cómo GAIA conversa con los usuarios</h2>
+                            <p className="text-gray-400 max-w-2xl mx-auto">El diseño de los prompts que gobiernan a GAIA está estructurado para maximizar la satisfacción y resolución, priorizando siempre la experiencia del usuario.</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={100} color="pink" iconName="HeartHandshake"
+                                title="Empatía Conversacional"
+                                desc="Validación emocional inmediata ante la frustración o urgencia antes de saltar a la respuesta técnica."
+                            />
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={200} color="cyan" iconName="Type"
+                                title="UX Writing Claro"
+                                desc="Lenguaje simple, directo y sin tecnicismos, utilizando frases cortas y un tono natural conversacional."
+                            />
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={300} color="blue" iconName="SlidersHorizontal"
+                                title="Adaptación de Tono"
+                                desc="Ajuste dinámico: soporte empático, facturación tranquilizadora, ventas orientadoras y contención ante frustración."
+                            />
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={400} color="orange" iconName="UserX"
+                                title="Fallback Amigable"
+                                desc="Cuando la información no está disponible (RAG vacío), se orienta al usuario con calidez sin romper el flujo conversacional."
+                            />
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={500} color="purple" iconName="Infinity"
+                                title="Continuidad Contextual"
+                                desc="Se aprovecha el historial mediante LangGraph para mantener la coherencia y no tratar cada mensaje como una nueva consulta."
+                            />
+                            <PrincipleCard
+                                isVisible={uxVisible} delay={600} color="green" iconName="ShieldCheck"
+                                title="Grounding Estricto"
+                                desc="Las respuestas se basan exclusivamente en el contexto recuperado de ChromaDB. Prevención total de alucinaciones."
+                            />
                         </div>
                     </section>
 
@@ -705,7 +705,7 @@
                         </div>
                     </section>
 
-                    {/* --- NUEVO: 7. VIABILIDAD E IMPACTO --- */}
+                    {/* --- 7. VIABILIDAD E IMPACTO --- */}
                     <section ref={bizRef} className="relative z-10 py-24 px-6 md:px-20 max-w-7xl mx-auto border-t border-gray-800/50">
                         <div className={`transition-all duration-1000 ${bizVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
                             <div className="flex flex-col items-center mb-12">
